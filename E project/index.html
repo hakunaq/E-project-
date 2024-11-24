@@ -1,0 +1,2418 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Snowell Electric</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <link href="bootstrap.min.css" rel="stylesheet">
+    <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+      <defs>
+        <symbol xmlns="http://www.w3.org/2000/svg" id="heart" viewBox="0 0 24 24">
+          <path fill="currentColor" d="M20.16 4.61A6.27 6.27 0 0 0 12 4a6.27 6.27 0 0 0-8.16 9.48l7.45 7.45a1 1 0 0 0 1.42 0l7.45-7.45a6.27 6.27 0 0 0 0-8.87Zm-1.41 7.46L12 18.81l-6.75-6.74a4.28 4.28 0 0 1 3-7.3a4.25 4.25 0 0 1 3 1.25a1 1 0 0 0 1.42 0a4.27 4.27 0 0 1 6 6.05Z"/>
+        </symbol>
+        <symbol xmlns="http://www.w3.org/2000/svg" id="plus" viewBox="0 0 24 24">
+          <path fill="currentColor" d="M19 11h-6V5a1 1 0 0 0-2 0v6H5a1 1 0 0 0 0 2h6v6a1 1 0 0 0 2 0v-6h6a1 1 0 0 0 0-2Z"/>
+        </symbol>
+        <symbol xmlns="http://www.w3.org/2000/svg" id="minus" viewBox="0 0 24 24">
+          <path fill="currentColor" d="M19 11H5a1 1 0 0 0 0 2h14a1 1 0 0 0 0-2Z"/>
+        </symbol>
+        <symbol xmlns="http://www.w3.org/2000/svg" id="cart" viewBox="0 0 24 24">
+          <path fill="currentColor" d="M8.5 19a1.5 1.5 0 1 0 1.5 1.5A1.5 1.5 0 0 0 8.5 19ZM19 16H7a1 1 0 0 1 0-2h8.491a3.013 3.013 0 0 0 2.885-2.176l1.585-5.55A1 1 0 0 0 19 5H6.74a3.007 3.007 0 0 0-2.82-2H3a1 1 0 0 0 0 2h.921a1.005 1.005 0 0 1 .962.725l.155.545v.005l1.641 5.742A3 3 0 0 0 7 18h12a1 1 0 0 0 0-2Zm-1.326-9l-1.22 4.274a1.005 1.005 0 0 1-.963.726H8.754l-.255-.892L7.326 7ZM16.5 19a1.5 1.5 0 1 0 1.5 1.5a1.5 1.5 0 0 0-1.5-1.5Z"/>
+        </symbol>
+      </defs>
+    </svg>
+
+
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        .img-contact{
+            background-size: contain;
+        }
+
+        .main {
+            
+            background: linear-gradient(to top, rgba(0,0,0,0.5) 50%, rgba(0,0,0,0.5) 50%);
+            background-position: center;
+            height: 12vh;
+            display: flex;               /* Use Flexbox */
+            align-items: center;        /* Center items vertically */
+            justify-content: space-between; /* Space between items */
+            padding: 15px 15px;           /* Optional padding */
+            background-size: contain;
+        }
+        
+        #search-bar {
+            width: 50%;
+            max-width: 500px;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        
+        .icon {
+            width: 200px;
+            height: 80px;
+            position: relative;
+        }
+        
+        .logo {
+            color: #ff7200;
+            font-size: 35px;
+            font-family: Arial;
+            padding-top: 05px;
+            margin-top: 5px;
+            padding-bottom: 20px;
+            position: relative;
+        }
+        
+        .signup-btn {
+            width: 80px;
+            padding: 15px 0;
+            text-align: center;
+            margin-left: 20px;          /* Adjust margins as needed */
+            border-radius: 25px;
+            font-weight: bold;
+            border: 2px solid #ff7200;
+            background: transparent;
+            color: white;
+            cursor: pointer;
+            overflow: hidden;
+            position: relative;         /* Position relative to enable hover effect */
+        }
+        
+        .cover {
+            background: rgb(238, 255, 0);
+            height: 100%;
+            width: 0%;
+            border-radius: 25px;
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            z-index: -1;
+            transition: 0.5s;
+        }
+        
+        .signup-btn:hover .cover {
+            width: 100%;
+        }
+        
+        .signup-btn:hover {
+            border: none;
+        }
+        
+        .product-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            padding-left: 30px;
+        }
+        .marq {
+            padding-top: 15px;
+            padding-bottom: 15px;
+        }
+
+        .geek1 {
+            font-size: 30px;
+            font-weight: bold;
+            color: white;
+            padding-bottom: 10px;
+        }
+
+        .product-item {
+            background: #f70404;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            width: 225px;
+            height: 300px;
+            box-sizing: border-box;
+            align-content: center;
+        }
+
+        .product-item img {
+            width: 100%;
+            height: auto;
+            border-radius: 5px;
+        }
+
+        .bottom-ticker {
+            width: 100%;
+            background-color: #333; /* Background color for the ticker */
+            color: white; /* Text color */
+            position: static; /* Fixed position to stay at the bottom */
+            bottom: 100px; /* Adjust this value to position above the footer */
+            left: 0;
+            overflow: hidden; /* Hide overflow */
+        }
+
+        .ticker-content {
+            display: inline-block;
+            white-space: nowrap; /* Prevent line breaks */
+            animation: scroll 10s linear infinite; /* Adjust speed here */
+            padding: 10px; /* Padding for the ticker */
+        }
+
+        @keyframes scroll {
+            from {
+                transform: translateX(100%); /* Start from the right */
+            }
+            to {
+                transform: translateX(-100%); /* End at the left */
+            }
+        }
+
+        footer {
+            background-color: #222; /* Footer background color */
+            color: white; /* Footer text color */
+            text-align: center;
+            padding: 20px;
+            position: relative; /* Ensure footer is below the ticker */
+        }
+
+        .footer-content {
+            max-width: 1200px; /* Max width for the footer content */
+            margin: 0 auto; /* Center the footer content */
+        }
+
+        .footer-content-ul {
+            list-style-type: none; /* Remove bullet points */
+            padding: 0; /* Remove padding */
+        }
+
+        .footer-content-ul-li {
+            display: inline; /* Display links inline */
+            margin: 0 15px; /* Margin between links */
+            color: white; /* Link color */
+            text-decoration: none; /* Remove underline */
+        }
+
+        .footer-content a {
+            color: white; /* Link color */
+            text-decoration: none; /* Remove underline */
+        }
+
+        .footer-content a:hover {
+            text-decoration: underline; /* Underline on hover */
+        }
+    </style>
+    <!--NavBar-->
+    <style>
+        .navbar {
+            width: 1200px;
+            height: 75px;
+            margin: auto;
+            display: flex;
+            justify-content: space-between; /* Adjusted for better spacing */
+            align-items: center; /* Center items vertically */
+        }
+        .menu {
+            height: 90px;
+            padding: 0;
+            margin: 0;
+            font-family: 'Poppins', monospace;
+        
+            
+        }
+        
+        ul {
+            list-style: none;
+            background:  linear-gradient(to top, rgba(0,0,0,0.5) 50%, rgba(0,0,0,0.5) 50%);
+        }
+        
+        ul li {
+            display: inline-block;
+            position: relative;
+        }
+        
+        ul li a {
+            display: block;
+            padding: 20px 25px;
+            color: #FFF;
+            text-decoration: none;
+            text-align: center;
+            font-size: 20px;
+        }
+        
+        ul li ul.dropdown li {
+            display: block;
+        }
+        
+        ul li ul.dropdown {
+            width: 100%;
+            background: linear-gradient(to top, rgba(0,0,0,0.5) 50%, rgba(0,0,0,0.5) 50%);
+            position: absolute;
+            z-index: 999;
+            display: none;
+        }
+        
+        
+        ul li a:hover {
+            color: #ff7200;
+        }
+        
+        
+        ul li:hover ul.dropdown {
+            display: block;
+        }
+    </style>
+    <!--Product best selling -->
+    <style>
+        
+            .product {
+            position: relative;
+            overflow: hidden;
+            padding: 20px;
+          }
+          
+          .product-category {
+            padding: 0 10vw;
+            font-size: 30px;
+            font-weight: 500;
+            margin-bottom: 40px;
+            text-transform: capitalize;
+            text-align: center;
+          }
+          
+          .product-container {
+            padding: 0 10vw;
+            display: flex;
+            overflow-x: auto;
+            scroll-behavior: smooth;
+          }
+          
+          .product-container::-webkit-scrollbar {
+            display: none;
+          }
+          
+          .product-card {
+            flex: 0 0 auto;
+            width: 250px;
+            height: 450px;
+            margin-right: 40px;
+          }
+          
+          .product-image {
+            position: relative;
+            width: 100%;
+            height: 350px;
+            overflow: hidden;
+          }
+          
+          .product-thumb {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+          }
+          
+          .discount-tag {
+            position: absolute;
+            background: #fff;
+            padding: 5px;
+            border-radius: 5px;
+            color: #ff7d7d;
+            right: 10px;
+            top: 10px;
+            text-transform: capitalize;
+          }
+          
+          .card-btn {
+            position: absolute;
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            padding: 10px;
+            width: 90%;
+            text-transform: capitalize;
+            border: none;
+            outline: none;
+            background: #fff;
+            border-radius: 5px;
+            transition: 0.5s;
+            cursor: pointer;
+            opacity: 0;
+          }
+          
+          .product-card:hover .card-btn {
+            opacity: 1;
+          }
+          
+          .card-btn:hover {
+            background: #ff7d7d;
+            color: #fff;
+          }
+          
+          .product-info {
+            width: 100%;
+            height: 100px;
+            padding-top: 10px;
+          }
+          
+          .product-brand {
+            text-transform: uppercase;
+          }
+          
+          .product-short-description {
+            width: 100%;
+            height: 20px;
+            line-height: 20px;
+            overflow: hidden;
+            opacity: 0.5;
+            text-transform: capitalize;
+            margin: 5px 0;
+          }
+          
+          .price {
+            font-weight: 900;
+            font-size: 20px;
+          }
+          
+          .actual-price {
+            margin-left: 20px;
+            opacity: 0.5;
+            text-decoration: line-through;
+          }
+          
+          .pre-btn,
+          .nxt-btn {
+            border: none;
+            width: 10vw;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, #fff 100%);
+            cursor: pointer;
+            z-index: 8;
+          }
+          
+          .pre-btn {
+            left: 0;
+            transform: rotate(180deg);
+          }
+          
+          .nxt-btn {
+            right: 0;
+          }
+          
+          .pre-btn img,
+          .nxt-btn img {
+            opacity: 0.2;
+          }
+          
+          .pre-btn:hover img,
+          .nxt-btn:hover img {
+            opacity: 1;
+          }
+          
+          .collection-container {
+            width: 100%;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-gap: 10px;
+          }
+          
+          .collection {
+            position: relative;
+          }
+          
+          .collection img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+          }
+          
+          .collection p {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            color: #fff;
+            font-size: 50px;
+            text-transform: capitalize;
+          }
+          
+          .collection:nth-child(3) {
+            grid-column: span 2;
+            margin-bottom: 10px;
+          }
+    </style>
+    <!--Services-->
+    <style>
+        .service-item {
+        box-shadow: 0 0 45px rgba(0, 0, 0, .08);
+        transition: .5s;
+    }
+    
+    .service-item:hover {
+        background: #FEA116;
+    }
+    
+    .service-item * {
+        transition: .5s;
+    }
+    
+    .service-item:hover * {
+        color: #F1F8FF !important;
+    }
+    </style>
+    <!--Section title-->
+    <style>
+        .section-title {
+            position: relative;
+            display: inline-block;
+        }
+        
+        .section-title::before {
+            position: absolute;
+            content: "";
+            width: 45px;
+            height: 2px;
+            top: 50%;
+            left: -55px;
+            margin-top: -1px;
+            background: var(--primary);
+        }
+        
+        .section-title::after {
+            position: absolute;
+            content: "";
+            width: 45px;
+            height: 2px;
+            top: 50%;
+            right: -55px;
+            margin-top: -1px;
+            background: var(--primary);
+        }
+        
+        .section-title.text-start::before,
+        .section-title.text-end::after {
+            display: none;
+        }
+    </style>
+    <style>
+        .tab-image{
+            background-image:;
+        }
+        .product-tabs .nav-tabs {
+            justify-content: flex-end;
+            border: none;
+            
+            --bs-nav-link-hover-color: #111;
+            --bs-nav-link-color: #555;
+            --bs-nav-tabs-link-border-color: #fff;
+            --bs-nav-tabs-link-hover-border-color: transparent;
+            --bs-nav-tabs-link-active-border-color: #fff;
+          }
+          .product-tabs .nav-tabs .nav-link.active, 
+          .product-tabs .nav-tabs .nav-item.show .nav-link {
+            
+            border-bottom: 3px solid var(--accent-color);
+          }
+        .product-item {
+            position: relative;
+            padding: 20px;
+            background: #FFFFFF;
+            border: 1px solid #FBFBFB;
+            box-shadow: 0px 5px 22px rgba(0, 0, 0, 0.04);
+            border-radius: 16px;
+            height: 400px;
+            width: 230px;
+            margin-bottom: 35px;
+            transition: box-shadow 0.3s ease-out;
+          }
+          .product-item:hover {
+            box-shadow: 0px 21px 44px rgba(0, 0, 0, 0.08);
+          }
+          .product-item h3 {
+            display: block;
+            width: 100%;
+            font-weight: 600;
+            font-size: 18px;
+            line-height: 25px;
+            text-transform: capitalize;
+            color: #333333;
+            margin: 0;
+          }
+          .product-item figure {
+            background: #F9F9F9;
+            border-radius: 12px;
+            text-align: center;
+          }
+          .product-item figure img {
+            max-height: 210px;
+            height: auto;
+          }
+          .product-item .btn-wishlist {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            width: 50px;
+            height: 50px;
+            border-radius: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #fff;
+            border: 1px solid #d8d8d8;
+            transition: all 0.3s ease-out;
+          }
+          .product-item .btn-wishlist:hover {
+            background: rgb(240, 56, 56);
+            color: #fff;
+          }
+          .product-item .qty {
+            font-weight: 400;
+            font-size: 13px;
+            line-height: 18px;
+            letter-spacing: 0.02em;
+            text-transform: uppercase;
+            color: #9D9D9D;
+          }
+          .product-item .rating {
+            font-weight: 600;
+            font-size: 13px;
+            line-height: 18px;
+            text-transform: capitalize;
+            color: #222222;
+          }
+          .product-item .rating iconify-icon {
+            color: #FFC43F;
+          }
+          .product-item .price {
+            display: block;
+            width: 100%;
+            font-weight: 600;
+            font-size: 22px;
+            line-height: 30px;
+            text-transform: capitalize;
+            color: #222222;
+          }
+          .product-item .product-qty {
+            width: 85px;
+          }
+          .product-item .btn-link {
+            text-decoration: none;
+          }
+          .product-item #quantity {
+            height: auto;
+            width: 28px;
+            text-align: center;
+            border: none;
+            margin: 0;
+            padding: 0;
+          }
+          .product-item .btn-number {
+            width: 26px;
+            height: 26px;
+            line-height: 1;
+            text-align: center;
+            background: #FFFFFF;
+            border: 1px solid #E2E2E2;
+            border-radius: 6px;
+            color: #222;
+            padding: 0;
+          }
+          
+    </style>
+</head>
+<body>
+
+    <div class="main">
+           
+            <div class="icon">
+                <h2 class="logo">Snowell Electric</h2>
+            </div>
+            <input type="text" id="search-bar" placeholder="Search for electronic products...">
+            <div class="parent-container">
+                <button class="signup-btn" type="button"><spam class="cover"></spam><i class="fa-solid fa-user"></i></button>
+                <button class="signup-btn" type="button"><spam class="cover"></spam><i class="fa-solid fa-cart-shopping"></i></button>
+            </div>
+            
+        </div>
+        <br><br>
+            <div class="nav-bar">
+                <div class="menu">
+                    <ul><li>
+                        <a href="#">All Products ▾</a>
+                        <ul class="dropdown">
+                            <li><a href="#Components">Computer components</a></li>
+                            <li><a href="#Mobile">Moblie</a></li>
+                            <li><a href="#">PC</a></li>
+                            <li><a href="#">Laptop</a></li>
+                            <li><a href="#">Mouse</a></li>
+                            <li><a href="#">Keyboard</a></li>
+                        </ul>
+                    </li>
+                        <li><a href="#">HOME</a></li>
+                        <li><a href="#">Coming soon</a></li>
+                        <li><a href="#Best-Deals">Best Deals</a></li>
+                        <li><a href="#service">SERVICE</a></li>
+                        <li><a href="#contact">CONTACT</a></li>
+                    </ul>
+                </div>
+            
+    </div>
+    <br><br>
+    <section class="product" id="Best-Deals"> 
+        <h2 class="product-category">best selling</h2>
+        <button class="pre-btn"><img src="images/arrow.png" alt=""></button>
+        <button class="nxt-btn"><img src="images/arrow.png" alt=""></button>
+        <div class="product-container">
+            <div class="product-card">
+                <div class="product-image">
+                    <span class="discount-tag">50% off</span>
+                    <img src="images/card1.jpg" class="product-thumb" alt="">
+                    <button class="card-btn">add to wishlist</button>
+                </div>
+                <div class="product-info">
+                    <h2 class="product-brand">brand</h2>
+                    <p class="product-short-description">a short line about the cloth..</p>
+                    <span class="price">$20</span><span class="actual-price">$40</span>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-image">
+                    <span class="discount-tag">50% off</span>
+                    <img src="images/card2.jpg" class="product-thumb" alt="">
+                    <button class="card-btn">add to wishlist</button>
+                </div>
+                <div class="product-info">
+                    <h2 class="product-brand">brand</h2>
+                    <p class="product-short-description">a short line about the cloth..</p>
+                    <span class="price">$20</span><span class="actual-price">$40</span>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-image">
+                    <span class="discount-tag">50% off</span>
+                    <img src="images/card3.jpg" class="product-thumb" alt="">
+                    <button class="card-btn">add to wishlist</button>
+                </div>
+                <div class="product-info">
+                    <h2 class="product-brand">brand</h2>
+                    <p class="product-short-description">a short line about the cloth..</p>
+                    <span class="price">$20</span><span class="actual-price">$40</span>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-image">
+                    <span class="discount-tag">50% off</span>
+                    <img src="images/card4.jpg" class="product-thumb" alt="">
+                    <button class="card-btn">add to wishlist</button>
+                </div>
+                <div class="product-info">
+                    <h2 class="product-brand">brand</h2>
+                    <p class="product-short-description">a short line about the cloth..</p>
+                    <span class="price">$20</span><span class="actual-price">$40</span>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-image">
+                    <span class="discount-tag">50% off</span>
+                    <img src="images/card5.jpg" class="product-thumb" alt="">
+                    <button class="card-btn">add to wishlist</button>
+                </div>
+                <div class="product-info">
+                    <h2 class="product-brand">brand</h2>
+                    <p class="product-short-description">a short line about the cloth..</p>
+                    <span class="price">$20</span><span class="actual-price">$40</span>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-image">
+                    <span class="discount-tag">50% off</span>
+                    <img src="images/card6.jpg" class="product-thumb" alt="">
+                    <button class="card-btn">add to wishlist</button>
+                </div>
+                <div class="product-info">
+                    <h2 class="product-brand">brand</h2>
+                    <p class="product-short-description">a short line about the cloth..</p>
+                    <span class="price">$20</span><span class="actual-price">$40</span>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-image">
+                    <span class="discount-tag">50% off</span>
+                    <img src="images/card7.jpg" class="product-thumb" alt="">
+                    <button class="card-btn">add to wishlist</button>
+                </div>
+                <div class="product-info">
+                    <h2 class="product-brand">brand</h2>
+                    <p class="product-short-description">a short line about the cloth..</p>
+                    <span class="price">$20</span><span class="actual-price">$40</span>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-image">
+                    <span class="discount-tag">50% off</span>
+                    <img src="images/card8.jpg" class="product-thumb" alt="">
+                    <button class="card-btn">add to wishlist</button>
+                </div>
+                <div class="product-info">
+                    <h2 class="product-brand">brand</h2>
+                    <p class="product-short-description">a short line about the cloth..</p>
+                    <span class="price">$20</span><span class="actual-price">$40</span>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-image">
+                    <span class="discount-tag">50% off</span>
+                    <img src="images/card9.jpg" class="product-thumb" alt="">
+                    <button class="card-btn">add to wishlist</button>
+                </div>
+                <div class="product-info">
+                    <h2 class="product-brand">brand</h2>
+                    <p class="product-short-description">a short line about the cloth..</p>
+                    <span class="price">$20</span><span class="actual-price">$40</span>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-image">
+                    <span class="discount-tag">50% off</span>
+                    <img src="images/card10.jpg" class="product-thumb" alt="">
+                    <button class="card-btn">add to wishlist</button>
+                </div>
+                <div class="product-info">
+                    <h2 class="product-brand">brand</h2>
+                    <p class="product-short-description">a short line about the cloth..</p>
+                    <span class="price">$20</span><span class="actual-price">$40</span>
+                </div>
+            </div>
+        </div>
+    </section>
+<br><br>
+
+<br><br>
+<div class="main-attraction">
+    <marquee scrollamount=30 class="marq" bgcolor="gray" 
+    direction="left" loop="infinte">
+    <div class="geek1">
+        Featured Products of snowell Electric
+</div>
+</marquee>
+<section class="product-list">
+  <div class="tab-pane">
+  <div class="product-grid row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-5">
+  <div class="col">
+    <div class="product-item">
+      <span class="badge bg-success position-absolute m-3">-30%</span>
+      <a href="#" class="btn-wishlist"><svg width="24" height="24"><use xlink:href="#heart"></use></svg></a>
+      <figure>
+        <a href="index.html" title="Product Title">
+          <img src="images/pre-owned-1.jpg"  class="tab-image">
+        </a>
+      </figure>
+      <h3>(Pre-Owned) Gaming PC Intel...</h3>
+      <span class="qty">1 Unit</span><span class="rating"><svg width="24" height="24" class="text-primary"><i class="fa-solid fa-star"></i></svg> 4.5</span>
+      <span class="price">QAR 3,890.00</span>
+      <div class="d-flex align-items-center justify-content-between">
+        <div class="input-group product-qty">
+            <span class="input-group-btn">
+                <button type="button" class="quantity-left-minus btn btn-danger btn-number" data-type="minus">
+                  <svg width="16" height="16"><use xlink:href="#minus"></use>></svg>
+                </button>
+            </span>
+            <input type="text" id="quantity" name="quantity" class="form-control input-number" value="1">
+            <span class="input-group-btn">
+                <button type="button" class="quantity-right-plus btn btn-success btn-number" data-type="plus">
+                    <svg width="16" height="16"><use xlink:href="#plus"></use></svg>
+                </button>
+            </span>
+        </div>
+        <a href="#" class="nav-link">Add to Cart <iconify-icon icon="uil:shopping-cart"></a>
+      </div>
+    </div>
+  </div>
+
+  <div class="col">
+    <div class="product-item">
+      <span class="badge bg-success position-absolute m-3">-30%</span>
+      <a href="#" class="btn-wishlist"><svg width="24" height="24"><use xlink:href="#heart"></use></svg></a>
+      <figure>
+        <a href="index.html" title="Product Title">
+          <img src="images/pre-owned-3.jpg"  class="tab-image">
+        </a>
+      </figure>
+      <h3>(Pre-Owned) Gaming PC Intel Core i9.....</h3>
+      <span class="qty">1 Unit</span><span class="rating"><svg width="24" height="24" class="text-primary"><i class="fa-solid fa-star"></i></svg> 4.5</span>
+      <span class="price">QAR 7,000.00</span>
+      <div class="d-flex align-items-center justify-content-between">
+        <div class="input-group product-qty">
+            <span class="input-group-btn">
+                <button type="button" class="quantity-left-minus btn btn-danger btn-number" data-type="minus">
+                  <svg width="16" height="16"><use xlink:href="#minus"></use>></svg>
+                </button>
+            </span>
+            <input type="text" id="quantity" name="quantity" class="form-control input-number" value="1">
+            <span class="input-group-btn">
+                <button type="button" class="quantity-right-plus btn btn-success btn-number" data-type="plus">
+                    <svg width="16" height="16"><use xlink:href="#plus"></use></svg>
+                </button>
+            </span>
+        </div>
+        <a href="#" class="nav-link">Add to Cart <iconify-icon icon="uil:shopping-cart"></a>
+      </div>
+    </div>
+  </div>
+
+  <div class="col">
+    <div class="product-item">
+      <a href="#" class="btn-wishlist"><svg width="24" height="24"><use xlink:href="#heart"></use></svg></a>
+      <figure>
+        <a href="index.html" title="Product Title">
+          <img src="images/retro-games-1.webp"  class="tab-image">
+        </a>
+      </figure>
+      <h3>(Pre-Owned) Grand Theft Auto V </h3>
+      <span class="qty">1 Unit</span><span class="rating"><svg width="24" height="24" class="text-primary"><i class="fa-solid fa-star"></i></svg> 4.5</span>
+      <span class="price">QAR 150.00</span>
+      <div class="d-flex align-items-center justify-content-between">
+        <div class="input-group product-qty">
+            <span class="input-group-btn">
+                <button type="button" class="quantity-left-minus btn btn-danger btn-number" data-type="minus">
+                  <svg width="16" height="16"><use xlink:href="#minus"></use>></svg>
+                </button>
+            </span>
+            <input type="text" id="quantity" name="quantity" class="form-control input-number" value="1">
+            <span class="input-group-btn">
+                <button type="button" class="quantity-right-plus btn btn-success btn-number" data-type="plus">
+                    <svg width="16" height="16"><use xlink:href="#plus"></use></svg>
+                </button>
+            </span>
+        </div>
+        <a href="#" class="nav-link">Add to Cart <iconify-icon icon="uil:shopping-cart"></a>
+      </div>
+    </div>
+  </div>
+
+  <div class="col">
+    <div class="product-item">
+      <a href="#" class="btn-wishlist"><svg width="24" height="24"><use xlink:href="#heart"></use></svg></a>
+      <figure>
+        <a href="index.html" title="Product Title">
+          <img src="images/monitor-1.webp"  class="tab-image">
+        </a>
+      </figure>
+      <h3>LG UltraGear 34GS95QE-B 34"</h3>
+      <span class="qty">1 Unit</span><span class="rating"><svg width="24" height="24" class="text-primary"><i class="fa-solid fa-star"></i></svg> 4.5</span>
+      <span class="price">QAR 4,500.00</span>
+      <div class="d-flex align-items-center justify-content-between">
+        <div class="input-group product-qty">
+            <span class="input-group-btn">
+                <button type="button" class="quantity-left-minus btn btn-danger btn-number" data-type="minus">
+                  <svg width="16" height="16"><use xlink:href="#minus"></use>></svg>
+                </button>
+            </span>
+            <input type="text" id="quantity" name="quantity" class="form-control input-number" value="1">
+            <span class="input-group-btn">
+                <button type="button" class="quantity-right-plus btn btn-success btn-number" data-type="plus">
+                    <svg width="16" height="16"><use xlink:href="#plus"></use></svg>
+                </button>
+            </span>
+        </div>
+        <a href="#" class="nav-link">Add to Cart <iconify-icon icon="uil:shopping-cart"></a>
+      </div>
+    </div>
+  </div>
+
+  <div class="col">
+    <div class="product-item">
+      <a href="#" class="btn-wishlist"><svg width="24" height="24"><use xlink:href="#heart"></use></svg></a>
+      <figure>
+        <a href="index.html" title="Product Title">
+          <img src="images/custom-build-1.webp"  class="tab-image">
+        </a>
+      </figure>
+      <h3>(Custom-Build) Alien Build....</h3>
+      <span class="qty">1 Unit</span><span class="rating"><svg width="24" height="24" class="text-primary"><i class="fa-solid fa-star"></i></svg> 4.5</span>
+      <span class="price">QAR 17,000.00</span>
+      <div class="d-flex align-items-center justify-content-between">
+        <div class="input-group product-qty">
+            <span class="input-group-btn">
+                <button type="button" class="quantity-left-minus btn btn-danger btn-number" data-type="minus">
+                  <svg width="16" height="16"><use xlink:href="#minus"></use>></svg>
+                </button>
+            </span>
+            <input type="text" id="quantity" name="quantity" class="form-control input-number" value="1">
+            <span class="input-group-btn">
+                <button type="button" class="quantity-right-plus btn btn-success btn-number" data-type="plus">
+                    <svg width="16" height="16"><use xlink:href="#plus"></use></svg>
+                </button>
+            </span>
+        </div>
+        <a href="#" class="nav-link">Add to Cart <iconify-icon icon="uil:shopping-cart"></a>
+      </div>
+    </div>
+  </div>
+
+  <div class="col">
+    <div class="product-item">
+      <a href="#" class="btn-wishlist"><svg width="24" height="24"><use xlink:href="#heart"></use></svg></a>
+      <figure>
+        <a href="index.html" title="Product Title">
+          <img src="images/prcessor-1.webp"  class="tab-image">
+        </a>
+      </figure>
+      <h3>AMD Ryzen™ 9 9900X 4.4 GHz</h3>
+      <span class="qty">1 Unit</span><span class="rating"><svg width="24" height="24" class="text-primary"><i class="fa-solid fa-star"></i></svg> 4.5</span>
+      <span class="price">QAR 2,500.00</span>
+      <div class="d-flex align-items-center justify-content-between">
+        <div class="input-group product-qty">
+            <span class="input-group-btn">
+                <button type="button" class="quantity-left-minus btn btn-danger btn-number" data-type="minus">
+                  <svg width="16" height="16"><use xlink:href="#minus"></use>></svg>
+                </button>
+            </span>
+            <input type="text" id="quantity" name="quantity" class="form-control input-number" value="1">
+            <span class="input-group-btn">
+                <button type="button" class="quantity-right-plus btn btn-success btn-number" data-type="plus">
+                    <svg width="16" height="16"><use xlink:href="#plus"></use></svg>
+                </button>
+            </span>
+        </div>
+        <a href="#" class="nav-link">Add to Cart <iconify-icon icon="uil:shopping-cart"></a>
+      </div>
+    </div>
+  </div>
+
+  <div class="col">
+    <div class="product-item">
+      <a href="#" class="btn-wishlist"><svg width="24" height="24"><use xlink:href="#heart"></use></svg></a>
+      <figure>
+        <a href="index.html" title="Product Title">
+          <img src="images/mother-board-1.webp"  class="tab-image">
+        </a>
+      </figure>
+      <h3>Gigabyte Z790 Gaming X AX </h3>
+      <span class="qty">1 Unit</span><span class="rating"><svg width="24" height="24" class="text-primary"><i class="fa-solid fa-star"></i></svg> 4.5</span>
+      <span class="price">QAR 1,200.00</span>
+      <div class="d-flex align-items-center justify-content-between">
+        <div class="input-group product-qty">
+            <span class="input-group-btn">
+                <button type="button" class="quantity-left-minus btn btn-danger btn-number" data-type="minus">
+                  <svg width="16" height="16"><use xlink:href="#minus"></use>></svg>
+                </button>
+            </span>
+            <input type="text" id="quantity" name="quantity" class="form-control input-number" value="1">
+            <span class="input-group-btn">
+                <button type="button" class="quantity-right-plus btn btn-success btn-number" data-type="plus">
+                    <svg width="16" height="16"><use xlink:href="#plus"></use></svg>
+                </button>
+            </span>
+        </div>
+        <a href="#" class="nav-link">Add to Cart <iconify-icon icon="uil:shopping-cart"></a>
+      </div>
+    </div>
+  </div>
+
+  <div class="col">
+    <div class="product-item">
+      <a href="#" class="btn-wishlist"><svg width="24" height="24"><use xlink:href="#heart"></use></svg></a>
+      <figure>
+        <a href="index.html" title="Product Title">
+          <img src="images/graphic-1.webp"  class="tab-image">
+        </a>
+      </figure>
+      <h3>Zotac Gaming GeForce RTX 4070</h3>
+      <span class="qty">1 Unit</span><span class="rating"><svg width="24" height="24" class="text-primary"><i class="fa-solid fa-star"></i></svg> 4.5</span>
+      <span class="price">QAR 1,800.0</span>
+      <div class="d-flex align-items-center justify-content-between">
+        <div class="input-group product-qty">
+            <span class="input-group-btn">
+                <button type="button" class="quantity-left-minus btn btn-danger btn-number" data-type="minus">
+                  <svg width="16" height="16"><use xlink:href="#minus"></use>></svg>
+                </button>
+            </span>
+            <input type="text" id="quantity" name="quantity" class="form-control input-number" value="1">
+            <span class="input-group-btn">
+                <button type="button" class="quantity-right-plus btn btn-success btn-number" data-type="plus">
+                    <svg width="16" height="16"><use xlink:href="#plus"></use></svg>
+                </button>
+            </span>
+        </div>
+        <a href="#" class="nav-link">Add to Cart <iconify-icon icon="uil:shopping-cart"></a>
+      </div>
+    </div>
+  </div>
+
+  <div class="col">
+    <div class="product-item">
+      <a href="#" class="btn-wishlist"><svg width="24" height="24"><use xlink:href="#heart"></use></svg></a>
+      <figure>
+        <a href="index.html" title="Product Title">
+          <img src="images/ram-1.webp"  class="tab-image">
+        </a>
+      </figure>
+      <h3>Corsair Dominator Platinum RGB</h3>
+      <span class="qty">1 Unit</span><span class="rating"><svg width="24" height="24" class="text-primary"><i class="fa-solid fa-star"></i></svg> 4.5</span>
+      <span class="price">QAR 650.00</span>
+      <div class="d-flex align-items-center justify-content-between">
+        <div class="input-group product-qty">
+            <span class="input-group-btn">
+                <button type="button" class="quantity-left-minus btn btn-danger btn-number" data-type="minus">
+                  <svg width="16" height="16"><use xlink:href="#minus"></use>></svg>
+                </button>
+            </span>
+            <input type="text" id="quantity" name="quantity" class="form-control input-number" value="1">
+            <span class="input-group-btn">
+                <button type="button" class="quantity-right-plus btn btn-success btn-number" data-type="plus">
+                    <svg width="16" height="16"><use xlink:href="#plus"></use></svg>
+                </button>
+            </span>
+        </div>
+        <a href="#" class="nav-link">Add to Cart <iconify-icon icon="uil:shopping-cart"></a>
+      </div>
+    </div>
+  </div>
+
+  <div class="col">
+    <div class="product-item">
+      <a href="#" class="btn-wishlist"><svg width="24" height="24"><use xlink:href="#heart"></use></svg></a>
+      <figure>
+        <a href="index.html" title="Product Title">
+          <img src="images/table-1.webp"  class="tab-image">
+        </a>
+      </figure>
+      <h3>Epic Gamers Gaming Desk V2</h3>
+      <span class="qty">1 Unit</span><span class="rating"><svg width="24" height="24" class="text-primary"><i class="fa-solid fa-star"></i></svg> 4.5</span>
+      <span class="price">QAR 730.00</span>
+      <div class="d-flex align-items-center justify-content-between">
+        <div class="input-group product-qty">
+            <span class="input-group-btn">
+                <button type="button" class="quantity-left-minus btn btn-danger btn-number" data-type="minus">
+                  <svg width="16" height="16"><use xlink:href="#minus"></use>></svg>
+                </button>
+            </span>
+            <input type="text" id="quantity" name="quantity" class="form-control input-number" value="1">
+            <span class="input-group-btn">
+                <button type="button" class="quantity-right-plus btn btn-success btn-number" data-type="plus">
+                    <svg width="16" height="16"><use xlink:href="#plus"></use></svg>
+                </button>
+            </span>
+        </div>
+        <a href="#" class="nav-link">Add to Cart <iconify-icon icon="uil:shopping-cart"></a>
+      </div>
+    </div>
+  </div>
+  
+  <div class="col">
+    <div class="product-item">
+      <a href="#" class="btn-wishlist"><svg width="24" height="24"><use xlink:href="#heart"></use></svg></a>
+      <figure>
+        <a href="index.html" title="Product Title">
+          <img src="images/chair-1.webp"  class="tab-image">
+        </a>
+      </figure>
+      <h3>Epic Gamers V2 RGB Gaming Chair</h3>
+      <span class="qty">1 Unit</span><span class="rating"><svg width="24" height="24" class="text-primary"><i class="fa-solid fa-star"></i></svg> 4.5</span>
+      <span class="price">QAR 1,500.00</span>
+      <div class="d-flex align-items-center justify-content-between">
+        <div class="input-group product-qty">
+            <span class="input-group-btn">
+                <button type="button" class="quantity-left-minus btn btn-danger btn-number" data-type="minus">
+                  <svg width="16" height="16"><use xlink:href="#minus"></use>></svg>
+                </button>
+            </span>
+            <input type="text" id="quantity" name="quantity" class="form-control input-number" value="1">
+            <span class="input-group-btn">
+                <button type="button" class="quantity-right-plus btn btn-success btn-number" data-type="plus">
+                    <svg width="16" height="16"><use xlink:href="#plus"></use></svg>
+                </button>
+            </span>
+        </div>
+        <a href="#" class="nav-link">Add to Cart <iconify-icon icon="uil:shopping-cart"></a>
+      </div>
+    </div>
+  </div>
+  
+  <div class="col">
+    <div class="product-item">
+      <a href="#" class="btn-wishlist"><svg width="24" height="24"><use xlink:href="#heart"></use></svg></a>
+      <figure>
+        <a href="index.html" title="Product Title">
+          <img src="images/steamdeck-1.webp"  class="tab-image">
+        </a>
+      </figure>
+      <h3>Valve Steam Deck 16GB RAM 512GB</h3>
+      <span class="qty">1 Unit</span><span class="rating"><svg width="24" height="24" class="text-primary"><i class="fa-solid fa-star"></i></svg> 4.5</span>
+      <span class="price">QAR 2,500.00</span>
+      <div class="d-flex align-items-center justify-content-between">
+        <div class="input-group product-qty">
+            <span class="input-group-btn">
+                <button type="button" class="quantity-left-minus btn btn-danger btn-number" data-type="minus">
+                  <svg width="16" height="16"><use xlink:href="#minus"></use>></svg>
+                </button>
+            </span>
+            <input type="text" id="quantity" name="quantity" class="form-control input-number" value="1">
+            <span class="input-group-btn">
+                <button type="button" class="quantity-right-plus btn btn-success btn-number" data-type="plus">
+                    <svg width="16" height="16"><use xlink:href="#plus"></use></svg>
+                </button>
+            </span>
+        </div>
+        <a href="#" class="nav-link">Add to Cart <iconify-icon icon="uil:shopping-cart"></a>
+      </div>
+    </div>
+  </div>
+
+  <div class="col">
+    <div class="product-item">
+      <a href="#" class="btn-wishlist"><svg width="24" height="24"><use xlink:href="#heart"></use></svg></a>
+      <figure>
+        <a href="index.html" title="Product Title">
+          <img src="images/laptop-1.webp"  class="tab-image">
+        </a>
+      </figure>
+      <h3>Dell Alienware X14 Intel</h3>
+      <span class="qty">1 Unit</span><span class="rating"><svg width="24" height="24" class="text-primary"><i class="fa-solid fa-star"></i></svg> 4.5</span>
+      <span class="price">QAR 8,500.00</span>
+      <div class="d-flex align-items-center justify-content-between">
+        <div class="input-group product-qty">
+            <span class="input-group-btn">
+                <button type="button" class="quantity-left-minus btn btn-danger btn-number" data-type="minus">
+                  <svg width="16" height="16"><use xlink:href="#minus"></use>></svg>
+                </button>
+            </span>
+            <input type="text" id="quantity" name="quantity" class="form-control input-number" value="1">
+            <span class="input-group-btn">
+                <button type="button" class="quantity-right-plus btn btn-success btn-number" data-type="plus">
+                    <svg width="16" height="16"><use xlink:href="#plus"></use></svg>
+                </button>
+            </span>
+        </div>
+        <a href="#" class="nav-link">Add to Cart <iconify-icon icon="uil:shopping-cart"></a>
+      </div>
+    </div>
+  </div>
+
+  <div class="col">
+    <div class="product-item">
+      <a href="#" class="btn-wishlist"><svg width="24" height="24"><use xlink:href="#heart"></use></svg></a>
+      <figure>
+        <a href="index.html" title="Product Title">
+          <img src="images/handheld-gaming-1.webp"  class="tab-image">
+        </a>
+      </figure>
+      <h3>Lenovo Legion GO Z1 Handheld </h3>
+      <span class="qty">Sold out</span><span class="rating"><svg width="24" height="24" class="text-primary"><i class="fa-solid fa-star"></i></svg> 4.5</span>
+      <span class="price">QAR 1,500.00</span>
+      <div class="d-flex align-items-center justify-content-between">
+        <div class="input-group product-qty">
+            <span class="input-group-btn">
+                <button type="button" class="quantity-left-minus btn btn-danger btn-number" data-type="minus">
+                  <svg width="16" height="16"><use xlink:href="#minus"></use>></svg>
+                </button>
+            </span>
+            <input type="text" id="quantity" name="quantity" class="form-control input-number" value="1">
+            <span class="input-group-btn">
+                <button type="button" class="quantity-right-plus btn btn-success btn-number" data-type="plus">
+                    <svg width="16" height="16"><use xlink:href="#plus"></use></svg>
+                </button>
+            </span>
+        </div>
+        <a href="#" class="nav-link">Add to Cart <iconify-icon icon="uil:shopping-cart"></a>
+      </div>
+    </div>
+  </div>
+
+  <div class="col">
+    <div class="product-item">
+      <a href="#" class="btn-wishlist"><svg width="24" height="24"><use xlink:href="#heart"></use></svg></a>
+      <figure>
+        <a href="index.html" title="Product Title">
+          <img src="images/phone-1.webp"  class="tab-image">
+        </a>
+      </figure>
+      <h3>RedMagic 7S Pro 18G+512G</h3>
+      <span class="qty">1 unit</span><span class="rating"><svg width="24" height="24" class="text-primary"><i class="fa-solid fa-star"></i></svg> 4.5</span>
+      <span class="price">QAR 2,500.00</span>
+      <div class="d-flex align-items-center justify-content-between">
+        <div class="input-group product-qty">
+            <span class="input-group-btn">
+                <button type="button" class="quantity-left-minus btn btn-danger btn-number" data-type="minus">
+                  <svg width="16" height="16"><use xlink:href="#minus"></use>></svg>
+                </button>
+            </span>
+            <input type="text" id="quantity" name="quantity" class="form-control input-number" value="1">
+            <span class="input-group-btn">
+                <button type="button" class="quantity-right-plus btn btn-success btn-number" data-type="plus">
+                    <svg width="16" height="16"><use xlink:href="#plus"></use></svg>
+                </button>
+            </span>
+        </div>
+        <a href="#" class="nav-link">Add to Cart <iconify-icon icon="uil:shopping-cart"></a>
+      </div>
+    </div>
+  </div>
+</div>
+
+</div>
+    </section>
+
+</div>
+
+<section class="All-Products">
+    <section class="py-5">
+        <div class="container-fluid">
+          
+          <div class="row">
+            <div class="col-md-12">
+  
+              <div class=" product-tabs">
+                <div class=" d-flex justify-content-between border-bottom my-5">
+                  <h3>Trending Products</h3>
+                  <nav>
+                    <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                      <a href="#" class="nav-link text-uppercase fs-6 active" id="nav-all-tab" data-bs-toggle="tab" data-bs-target="#nav-all">All</a>
+                      <a href="#" class="nav-link text-uppercase fs-6 " id="nav-all-tab" data-bs-toggle="tab" data-bs-target="#Components">Components</a>
+                      <a href="#" class="nav-link text-uppercase fs-6 " id="nav-all-tab" data-bs-toggle="tab" data-bs-target="#Mobile">Mobile</a>
+                      <a href="#" class="nav-link text-uppercase fs-6 " id="nav-all-tab" data-bs-toggle="tab" data-bs-target="#Monitor">Monitor</a>
+                      <a href="#" class="nav-link text-uppercase fs-6 " id="nav-all-tab" data-bs-toggle="tab" data-bs-target="#Retro">Retro Games</a>
+                      <a href="#" class="nav-link text-uppercase fs-6 " id="nav-all-tab" data-bs-toggle="tab" data-bs-target="#Laptop">Laptop</a>
+                      <a href="#" class="nav-link text-uppercase fs-6 " id="nav-all-tab" data-bs-toggle="tab" data-bs-target="#Pre-Owned-Pc">Pre-Owned PC</a>
+                      <a href="#" class="nav-link text-uppercase fs-6" id="nav-fruits-tab" data-bs-toggle="tab" data-bs-target="#Pre-Build">Pre-Build PC</a>
+                      <a href="#" class="nav-link text-uppercase fs-6" id="nav-juices-tab" data-bs-toggle="tab" data-bs-target="#console-acces">Console & Gaming Accessories</a>
+                    </div>
+                  </nav>
+                </div>
+                <div class="tab-content" id="nav-tabContent">
+                  <div class="tab-pane fade show active" id="nav-all" role="tabpanel" aria-labelledby="nav-all-tab">
+  
+                    <div class="product-grid row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-5">
+                    
+                      <div class="col">
+                        <div class="product-item">
+                          <span class="badge bg-success position-absolute m-3">-30%</span>
+                          <a href="#" class="btn-wishlist"><svg width="24" height="24"><use xlink:href="#heart"></use></svg></a>
+                          <figure>
+                            <a href="index.html" title="Product Title">
+                              <img src="images/pre-owned-1.jpg"  class="tab-image">
+                            </a>
+                          </figure>
+                          <h3>(Pre-Owned) Gaming PC Intel...</h3>
+                          <span class="qty">1 Unit</span><span class="rating"><svg width="24" height="24" class="text-primary"><i class="fa-solid fa-star"></i></svg> 4.5</span>
+                          <span class="price">QAR 3,890.00</span>
+                          <div class="d-flex align-items-center justify-content-between">
+                            <div class="input-group product-qty">
+                                <span class="input-group-btn">
+                                    <button type="button" class="quantity-left-minus btn btn-danger btn-number" data-type="minus">
+                                      <svg width="16" height="16"><use xlink:href="#minus"></use>></svg>
+                                    </button>
+                                </span>
+                                <input type="text" id="quantity" name="quantity" class="form-control input-number" value="1">
+                                <span class="input-group-btn">
+                                    <button type="button" class="quantity-right-plus btn btn-success btn-number" data-type="plus">
+                                        <svg width="16" height="16"><use xlink:href="#plus"></use></svg>
+                                    </button>
+                                </span>
+                            </div>
+                            <a href="#" class="nav-link">Add to Cart <iconify-icon icon="uil:shopping-cart"></a>
+                          </div>
+                        </div>
+                      </div>
+  
+                      <div class="col">
+                        <div class="product-item">
+                          <span class="badge bg-success position-absolute m-3">-30%</span>
+                          <a href="#" class="btn-wishlist"><svg width="24" height="24"><use xlink:href="#heart"></use></svg></a>
+                          <figure>
+                            <a href="index.html" title="Product Title">
+                              <img src="images/pre-owned-3.jpg"  class="tab-image">
+                            </a>
+                          </figure>
+                          <h3>(Pre-Owned) Gaming PC Intel Core i9.....</h3>
+                          <span class="qty">1 Unit</span><span class="rating"><svg width="24" height="24" class="text-primary"><i class="fa-solid fa-star"></i></svg> 4.5</span>
+                          <span class="price">QAR 7,000.00</span>
+                          <div class="d-flex align-items-center justify-content-between">
+                            <div class="input-group product-qty">
+                                <span class="input-group-btn">
+                                    <button type="button" class="quantity-left-minus btn btn-danger btn-number" data-type="minus">
+                                      <svg width="16" height="16"><use xlink:href="#minus"></use>></svg>
+                                    </button>
+                                </span>
+                                <input type="text" id="quantity" name="quantity" class="form-control input-number" value="1">
+                                <span class="input-group-btn">
+                                    <button type="button" class="quantity-right-plus btn btn-success btn-number" data-type="plus">
+                                        <svg width="16" height="16"><use xlink:href="#plus"></use></svg>
+                                    </button>
+                                </span>
+                            </div>
+                            <a href="#" class="nav-link">Add to Cart <iconify-icon icon="uil:shopping-cart"></a>
+                          </div>
+                        </div>
+                      </div>
+  
+                      <div class="col">
+                        <div class="product-item">
+                          <a href="#" class="btn-wishlist"><svg width="24" height="24"><use xlink:href="#heart"></use></svg></a>
+                          <figure>
+                            <a href="index.html" title="Product Title">
+                              <img src="images/retro-games-1.webp"  class="tab-image">
+                            </a>
+                          </figure>
+                          <h3>(Pre-Owned) Grand Theft Auto V </h3>
+                          <span class="qty">1 Unit</span><span class="rating"><svg width="24" height="24" class="text-primary"><i class="fa-solid fa-star"></i></svg> 4.5</span>
+                          <span class="price">QAR 150.00</span>
+                          <div class="d-flex align-items-center justify-content-between">
+                            <div class="input-group product-qty">
+                                <span class="input-group-btn">
+                                    <button type="button" class="quantity-left-minus btn btn-danger btn-number" data-type="minus">
+                                      <svg width="16" height="16"><use xlink:href="#minus"></use>></svg>
+                                    </button>
+                                </span>
+                                <input type="text" id="quantity" name="quantity" class="form-control input-number" value="1">
+                                <span class="input-group-btn">
+                                    <button type="button" class="quantity-right-plus btn btn-success btn-number" data-type="plus">
+                                        <svg width="16" height="16"><use xlink:href="#plus"></use></svg>
+                                    </button>
+                                </span>
+                            </div>
+                            <a href="#" class="nav-link">Add to Cart <iconify-icon icon="uil:shopping-cart"></a>
+                          </div>
+                        </div>
+                      </div>
+  
+                      <div class="col">
+                        <div class="product-item">
+                          <a href="#" class="btn-wishlist"><svg width="24" height="24"><use xlink:href="#heart"></use></svg></a>
+                          <figure>
+                            <a href="index.html" title="Product Title">
+                              <img src="images/monitor-1.webp"  class="tab-image">
+                            </a>
+                          </figure>
+                          <h3>LG UltraGear 34GS95QE-B 34"</h3>
+                          <span class="qty">1 Unit</span><span class="rating"><svg width="24" height="24" class="text-primary"><i class="fa-solid fa-star"></i></svg> 4.5</span>
+                          <span class="price">QAR 4,500.00</span>
+                          <div class="d-flex align-items-center justify-content-between">
+                            <div class="input-group product-qty">
+                                <span class="input-group-btn">
+                                    <button type="button" class="quantity-left-minus btn btn-danger btn-number" data-type="minus">
+                                      <svg width="16" height="16"><use xlink:href="#minus"></use>></svg>
+                                    </button>
+                                </span>
+                                <input type="text" id="quantity" name="quantity" class="form-control input-number" value="1">
+                                <span class="input-group-btn">
+                                    <button type="button" class="quantity-right-plus btn btn-success btn-number" data-type="plus">
+                                        <svg width="16" height="16"><use xlink:href="#plus"></use></svg>
+                                    </button>
+                                </span>
+                            </div>
+                            <a href="#" class="nav-link">Add to Cart <iconify-icon icon="uil:shopping-cart"></a>
+                          </div>
+                        </div>
+                      </div>
+  
+                      <div class="col">
+                        <div class="product-item">
+                          <a href="#" class="btn-wishlist"><svg width="24" height="24"><use xlink:href="#heart"></use></svg></a>
+                          <figure>
+                            <a href="index.html" title="Product Title">
+                              <img src="images/custom-build-1.webp"  class="tab-image">
+                            </a>
+                          </figure>
+                          <h3>(Custom-Build) Alien Build....</h3>
+                          <span class="qty">1 Unit</span><span class="rating"><svg width="24" height="24" class="text-primary"><i class="fa-solid fa-star"></i></svg> 4.5</span>
+                          <span class="price">QAR 17,000.00</span>
+                          <div class="d-flex align-items-center justify-content-between">
+                            <div class="input-group product-qty">
+                                <span class="input-group-btn">
+                                    <button type="button" class="quantity-left-minus btn btn-danger btn-number" data-type="minus">
+                                      <svg width="16" height="16"><use xlink:href="#minus"></use>></svg>
+                                    </button>
+                                </span>
+                                <input type="text" id="quantity" name="quantity" class="form-control input-number" value="1">
+                                <span class="input-group-btn">
+                                    <button type="button" class="quantity-right-plus btn btn-success btn-number" data-type="plus">
+                                        <svg width="16" height="16"><use xlink:href="#plus"></use></svg>
+                                    </button>
+                                </span>
+                            </div>
+                            <a href="#" class="nav-link">Add to Cart <iconify-icon icon="uil:shopping-cart"></a>
+                          </div>
+                        </div>
+                      </div>
+  
+                      <div class="col">
+                        <div class="product-item">
+                          <a href="#" class="btn-wishlist"><svg width="24" height="24"><use xlink:href="#heart"></use></svg></a>
+                          <figure>
+                            <a href="index.html" title="Product Title">
+                              <img src="images/prcessor-1.webp"  class="tab-image">
+                            </a>
+                          </figure>
+                          <h3>AMD Ryzen™ 9 9900X 4.4 GHz</h3>
+                          <span class="qty">1 Unit</span><span class="rating"><svg width="24" height="24" class="text-primary"><i class="fa-solid fa-star"></i></svg> 4.5</span>
+                          <span class="price">QAR 2,500.00</span>
+                          <div class="d-flex align-items-center justify-content-between">
+                            <div class="input-group product-qty">
+                                <span class="input-group-btn">
+                                    <button type="button" class="quantity-left-minus btn btn-danger btn-number" data-type="minus">
+                                      <svg width="16" height="16"><use xlink:href="#minus"></use>></svg>
+                                    </button>
+                                </span>
+                                <input type="text" id="quantity" name="quantity" class="form-control input-number" value="1">
+                                <span class="input-group-btn">
+                                    <button type="button" class="quantity-right-plus btn btn-success btn-number" data-type="plus">
+                                        <svg width="16" height="16"><use xlink:href="#plus"></use></svg>
+                                    </button>
+                                </span>
+                            </div>
+                            <a href="#" class="nav-link">Add to Cart <iconify-icon icon="uil:shopping-cart"></a>
+                          </div>
+                        </div>
+                      </div>
+  
+                      <div class="col">
+                        <div class="product-item">
+                          <a href="#" class="btn-wishlist"><svg width="24" height="24"><use xlink:href="#heart"></use></svg></a>
+                          <figure>
+                            <a href="index.html" title="Product Title">
+                              <img src="images/mother-board-1.webp"  class="tab-image">
+                            </a>
+                          </figure>
+                          <h3>Gigabyte Z790 Gaming X AX </h3>
+                          <span class="qty">1 Unit</span><span class="rating"><svg width="24" height="24" class="text-primary"><i class="fa-solid fa-star"></i></svg> 4.5</span>
+                          <span class="price">QAR 1,200.00</span>
+                          <div class="d-flex align-items-center justify-content-between">
+                            <div class="input-group product-qty">
+                                <span class="input-group-btn">
+                                    <button type="button" class="quantity-left-minus btn btn-danger btn-number" data-type="minus">
+                                      <svg width="16" height="16"><use xlink:href="#minus"></use>></svg>
+                                    </button>
+                                </span>
+                                <input type="text" id="quantity" name="quantity" class="form-control input-number" value="1">
+                                <span class="input-group-btn">
+                                    <button type="button" class="quantity-right-plus btn btn-success btn-number" data-type="plus">
+                                        <svg width="16" height="16"><use xlink:href="#plus"></use></svg>
+                                    </button>
+                                </span>
+                            </div>
+                            <a href="#" class="nav-link">Add to Cart <iconify-icon icon="uil:shopping-cart"></a>
+                          </div>
+                        </div>
+                      </div>
+  
+                      <div class="col">
+                        <div class="product-item">
+                          <a href="#" class="btn-wishlist"><svg width="24" height="24"><use xlink:href="#heart"></use></svg></a>
+                          <figure>
+                            <a href="index.html" title="Product Title">
+                              <img src="images/graphic-1.webp"  class="tab-image">
+                            </a>
+                          </figure>
+                          <h3>Zotac Gaming GeForce RTX 4070</h3>
+                          <span class="qty">1 Unit</span><span class="rating"><svg width="24" height="24" class="text-primary"><i class="fa-solid fa-star"></i></svg> 4.5</span>
+                          <span class="price">QAR 1,800.0</span>
+                          <div class="d-flex align-items-center justify-content-between">
+                            <div class="input-group product-qty">
+                                <span class="input-group-btn">
+                                    <button type="button" class="quantity-left-minus btn btn-danger btn-number" data-type="minus">
+                                      <svg width="16" height="16"><use xlink:href="#minus"></use>></svg>
+                                    </button>
+                                </span>
+                                <input type="text" id="quantity" name="quantity" class="form-control input-number" value="1">
+                                <span class="input-group-btn">
+                                    <button type="button" class="quantity-right-plus btn btn-success btn-number" data-type="plus">
+                                        <svg width="16" height="16"><use xlink:href="#plus"></use></svg>
+                                    </button>
+                                </span>
+                            </div>
+                            <a href="#" class="nav-link">Add to Cart <iconify-icon icon="uil:shopping-cart"></a>
+                          </div>
+                        </div>
+                      </div>
+  
+                      <div class="col">
+                        <div class="product-item">
+                          <a href="#" class="btn-wishlist"><svg width="24" height="24"><use xlink:href="#heart"></use></svg></a>
+                          <figure>
+                            <a href="index.html" title="Product Title">
+                              <img src="images/ram-1.webp"  class="tab-image">
+                            </a>
+                          </figure>
+                          <h3>Corsair Dominator Platinum RGB</h3>
+                          <span class="qty">1 Unit</span><span class="rating"><svg width="24" height="24" class="text-primary"><i class="fa-solid fa-star"></i></svg> 4.5</span>
+                          <span class="price">QAR 650.00</span>
+                          <div class="d-flex align-items-center justify-content-between">
+                            <div class="input-group product-qty">
+                                <span class="input-group-btn">
+                                    <button type="button" class="quantity-left-minus btn btn-danger btn-number" data-type="minus">
+                                      <svg width="16" height="16"><use xlink:href="#minus"></use>></svg>
+                                    </button>
+                                </span>
+                                <input type="text" id="quantity" name="quantity" class="form-control input-number" value="1">
+                                <span class="input-group-btn">
+                                    <button type="button" class="quantity-right-plus btn btn-success btn-number" data-type="plus">
+                                        <svg width="16" height="16"><use xlink:href="#plus"></use></svg>
+                                    </button>
+                                </span>
+                            </div>
+                            <a href="#" class="nav-link">Add to Cart <iconify-icon icon="uil:shopping-cart"></a>
+                          </div>
+                        </div>
+                      </div>
+  
+                      <div class="col">
+                        <div class="product-item">
+                          <a href="#" class="btn-wishlist"><svg width="24" height="24"><use xlink:href="#heart"></use></svg></a>
+                          <figure>
+                            <a href="index.html" title="Product Title">
+                              <img src="images/table-1.webp"  class="tab-image">
+                            </a>
+                          </figure>
+                          <h3>Epic Gamers Gaming Desk V2</h3>
+                          <span class="qty">1 Unit</span><span class="rating"><svg width="24" height="24" class="text-primary"><i class="fa-solid fa-star"></i></svg> 4.5</span>
+                          <span class="price">QAR 730.00</span>
+                          <div class="d-flex align-items-center justify-content-between">
+                            <div class="input-group product-qty">
+                                <span class="input-group-btn">
+                                    <button type="button" class="quantity-left-minus btn btn-danger btn-number" data-type="minus">
+                                      <svg width="16" height="16"><use xlink:href="#minus"></use>></svg>
+                                    </button>
+                                </span>
+                                <input type="text" id="quantity" name="quantity" class="form-control input-number" value="1">
+                                <span class="input-group-btn">
+                                    <button type="button" class="quantity-right-plus btn btn-success btn-number" data-type="plus">
+                                        <svg width="16" height="16"><use xlink:href="#plus"></use></svg>
+                                    </button>
+                                </span>
+                            </div>
+                            <a href="#" class="nav-link">Add to Cart <iconify-icon icon="uil:shopping-cart"></a>
+                          </div>
+                        </div>
+                      </div>
+                      
+                      <div class="col">
+                        <div class="product-item">
+                          <a href="#" class="btn-wishlist"><svg width="24" height="24"><use xlink:href="#heart"></use></svg></a>
+                          <figure>
+                            <a href="index.html" title="Product Title">
+                              <img src="images/chair-1.webp"  class="tab-image">
+                            </a>
+                          </figure>
+                          <h3>Epic Gamers V2 RGB Gaming Chair</h3>
+                          <span class="qty">1 Unit</span><span class="rating"><svg width="24" height="24" class="text-primary"><i class="fa-solid fa-star"></i></svg> 4.5</span>
+                          <span class="price">QAR 1,500.00</span>
+                          <div class="d-flex align-items-center justify-content-between">
+                            <div class="input-group product-qty">
+                                <span class="input-group-btn">
+                                    <button type="button" class="quantity-left-minus btn btn-danger btn-number" data-type="minus">
+                                      <svg width="16" height="16"><use xlink:href="#minus"></use>></svg>
+                                    </button>
+                                </span>
+                                <input type="text" id="quantity" name="quantity" class="form-control input-number" value="1">
+                                <span class="input-group-btn">
+                                    <button type="button" class="quantity-right-plus btn btn-success btn-number" data-type="plus">
+                                        <svg width="16" height="16"><use xlink:href="#plus"></use></svg>
+                                    </button>
+                                </span>
+                            </div>
+                            <a href="#" class="nav-link">Add to Cart <iconify-icon icon="uil:shopping-cart"></a>
+                          </div>
+                        </div>
+                      </div>
+                      
+                      <div class="col">
+                        <div class="product-item">
+                          <a href="#" class="btn-wishlist"><svg width="24" height="24"><use xlink:href="#heart"></use></svg></a>
+                          <figure>
+                            <a href="index.html" title="Product Title">
+                              <img src="images/steamdeck-1.webp"  class="tab-image">
+                            </a>
+                          </figure>
+                          <h3>Valve Steam Deck 16GB RAM 512GB</h3>
+                          <span class="qty">1 Unit</span><span class="rating"><svg width="24" height="24" class="text-primary"><i class="fa-solid fa-star"></i></svg> 4.5</span>
+                          <span class="price">QAR 2,500.00</span>
+                          <div class="d-flex align-items-center justify-content-between">
+                            <div class="input-group product-qty">
+                                <span class="input-group-btn">
+                                    <button type="button" class="quantity-left-minus btn btn-danger btn-number" data-type="minus">
+                                      <svg width="16" height="16"><use xlink:href="#minus"></use>></svg>
+                                    </button>
+                                </span>
+                                <input type="text" id="quantity" name="quantity" class="form-control input-number" value="1">
+                                <span class="input-group-btn">
+                                    <button type="button" class="quantity-right-plus btn btn-success btn-number" data-type="plus">
+                                        <svg width="16" height="16"><use xlink:href="#plus"></use></svg>
+                                    </button>
+                                </span>
+                            </div>
+                            <a href="#" class="nav-link">Add to Cart <iconify-icon icon="uil:shopping-cart"></a>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="col">
+                        <div class="product-item">
+                          <a href="#" class="btn-wishlist"><svg width="24" height="24"><use xlink:href="#heart"></use></svg></a>
+                          <figure>
+                            <a href="index.html" title="Product Title">
+                              <img src="images/laptop-1.webp"  class="tab-image">
+                            </a>
+                          </figure>
+                          <h3>Dell Alienware X14 Intel</h3>
+                          <span class="qty">1 Unit</span><span class="rating"><svg width="24" height="24" class="text-primary"><i class="fa-solid fa-star"></i></svg> 4.5</span>
+                          <span class="price">QAR 8,500.00</span>
+                          <div class="d-flex align-items-center justify-content-between">
+                            <div class="input-group product-qty">
+                                <span class="input-group-btn">
+                                    <button type="button" class="quantity-left-minus btn btn-danger btn-number" data-type="minus">
+                                      <svg width="16" height="16"><use xlink:href="#minus"></use>></svg>
+                                    </button>
+                                </span>
+                                <input type="text" id="quantity" name="quantity" class="form-control input-number" value="1">
+                                <span class="input-group-btn">
+                                    <button type="button" class="quantity-right-plus btn btn-success btn-number" data-type="plus">
+                                        <svg width="16" height="16"><use xlink:href="#plus"></use></svg>
+                                    </button>
+                                </span>
+                            </div>
+                            <a href="#" class="nav-link">Add to Cart <iconify-icon icon="uil:shopping-cart"></a>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="col">
+                        <div class="product-item">
+                          <a href="#" class="btn-wishlist"><svg width="24" height="24"><use xlink:href="#heart"></use></svg></a>
+                          <figure>
+                            <a href="index.html" title="Product Title">
+                              <img src="images/handheld-gaming-1.webp"  class="tab-image">
+                            </a>
+                          </figure>
+                          <h3>Lenovo Legion GO Z1 Handheld </h3>
+                          <span class="qty">Sold out</span><span class="rating"><svg width="24" height="24" class="text-primary"><i class="fa-solid fa-star"></i></svg> 4.5</span>
+                          <span class="price">QAR 1,500.00</span>
+                          <div class="d-flex align-items-center justify-content-between">
+                            <div class="input-group product-qty">
+                                <span class="input-group-btn">
+                                    <button type="button" class="quantity-left-minus btn btn-danger btn-number" data-type="minus">
+                                      <svg width="16" height="16"><use xlink:href="#minus"></use>></svg>
+                                    </button>
+                                </span>
+                                <input type="text" id="quantity" name="quantity" class="form-control input-number" value="1">
+                                <span class="input-group-btn">
+                                    <button type="button" class="quantity-right-plus btn btn-success btn-number" data-type="plus">
+                                        <svg width="16" height="16"><use xlink:href="#plus"></use></svg>
+                                    </button>
+                                </span>
+                            </div>
+                            <a href="#" class="nav-link">Add to Cart <iconify-icon icon="uil:shopping-cart"></a>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="col">
+                        <div class="product-item">
+                          <a href="#" class="btn-wishlist"><svg width="24" height="24"><use xlink:href="#heart"></use></svg></a>
+                          <figure>
+                            <a href="index.html" title="Product Title">
+                              <img src="images/phone-1.webp"  class="tab-image">
+                            </a>
+                          </figure>
+                          <h3>RedMagic 7S Pro 18G+512G</h3>
+                          <span class="qty">1 unit</span><span class="rating"><svg width="24" height="24" class="text-primary"><i class="fa-solid fa-star"></i></svg> 4.5</span>
+                          <span class="price">QAR 2,500.00</span>
+                          <div class="d-flex align-items-center justify-content-between">
+                            <div class="input-group product-qty">
+                                <span class="input-group-btn">
+                                    <button type="button" class="quantity-left-minus btn btn-danger btn-number" data-type="minus">
+                                      <svg width="16" height="16"><use xlink:href="#minus"></use>></svg>
+                                    </button>
+                                </span>
+                                <input type="text" id="quantity" name="quantity" class="form-control input-number" value="1">
+                                <span class="input-group-btn">
+                                    <button type="button" class="quantity-right-plus btn btn-success btn-number" data-type="plus">
+                                        <svg width="16" height="16"><use xlink:href="#plus"></use></svg>
+                                    </button>
+                                </span>
+                            </div>
+                            <a href="#" class="nav-link">Add to Cart <iconify-icon icon="uil:shopping-cart"></a>
+                          </div>
+                        </div>
+                      </div>
+
+                    </div>
+                    <!-- / components-product-grid -->
+                </div>
+                <div class="tab-pane fade" id="Components" role="tabpanel" aria-labelledby="Components">
+
+                  <div class="product-grid row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-5">
+
+                    <div class="col">
+                      <div class="product-item">
+                        <a href="#" class="btn-wishlist"><svg width="24" height="24"><use xlink:href="#heart"></use></svg></a>
+                        <figure>
+                          <a href="index.html" title="Product Title">
+                            <img src="images/prcessor-1.webp"  class="tab-image">
+                          </a>
+                        </figure>
+                        <h3>AMD Ryzen™ 9 9900X 4.4 GHz</h3>
+                        <span class="qty">1 Unit</span><span class="rating"><svg width="24" height="24" class="text-primary"><i class="fa-solid fa-star"></i></svg> 4.5</span>
+                        <span class="price">QAR 2,500.00</span>
+                        <div class="d-flex align-items-center justify-content-between">
+                          <div class="input-group product-qty">
+                              <span class="input-group-btn">
+                                  <button type="button" class="quantity-left-minus btn btn-danger btn-number" data-type="minus">
+                                    <svg width="16" height="16"><use xlink:href="#minus"></use>></svg>
+                                  </button>
+                              </span>
+                              <input type="text" id="quantity" name="quantity" class="form-control input-number" value="1">
+                              <span class="input-group-btn">
+                                  <button type="button" class="quantity-right-plus btn btn-success btn-number" data-type="plus">
+                                      <svg width="16" height="16"><use xlink:href="#plus"></use></svg>
+                                  </button>
+                              </span>
+                          </div>
+                          <a href="#" class="nav-link">Add to Cart <iconify-icon icon="uil:shopping-cart"></a>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="col">
+                      <div class="product-item">
+                        <a href="#" class="btn-wishlist"><svg width="24" height="24"><use xlink:href="#heart"></use></svg></a>
+                        <figure>
+                          <a href="index.html" title="Product Title">
+                            <img src="images/mother-board-1.webp"  class="tab-image">
+                          </a>
+                        </figure>
+                        <h3>Gigabyte Z790 Gaming X AX </h3>
+                        <span class="qty">1 Unit</span><span class="rating"><svg width="24" height="24" class="text-primary"><i class="fa-solid fa-star"></i></svg> 4.5</span>
+                        <span class="price">QAR 1,200.00</span>
+                        <div class="d-flex align-items-center justify-content-between">
+                          <div class="input-group product-qty">
+                              <span class="input-group-btn">
+                                  <button type="button" class="quantity-left-minus btn btn-danger btn-number" data-type="minus">
+                                    <svg width="16" height="16"><use xlink:href="#minus"></use>></svg>
+                                  </button>
+                              </span>
+                              <input type="text" id="quantity" name="quantity" class="form-control input-number" value="1">
+                              <span class="input-group-btn">
+                                  <button type="button" class="quantity-right-plus btn btn-success btn-number" data-type="plus">
+                                      <svg width="16" height="16"><use xlink:href="#plus"></use></svg>
+                                  </button>
+                              </span>
+                          </div>
+                          <a href="#" class="nav-link">Add to Cart <iconify-icon icon="uil:shopping-cart"></a>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="col">
+                      <div class="product-item">
+                        <a href="#" class="btn-wishlist"><svg width="24" height="24"><use xlink:href="#heart"></use></svg></a>
+                        <figure>
+                          <a href="index.html" title="Product Title">
+                            <img src="images/graphic-1.webp"  class="tab-image">
+                          </a>
+                        </figure>
+                        <h3>Zotac Gaming GeForce RTX 4070</h3>
+                        <span class="qty">1 Unit</span><span class="rating"><svg width="24" height="24" class="text-primary"><i class="fa-solid fa-star"></i></svg> 4.5</span>
+                        <span class="price">QAR 1,800.0</span>
+                        <div class="d-flex align-items-center justify-content-between">
+                          <div class="input-group product-qty">
+                              <span class="input-group-btn">
+                                  <button type="button" class="quantity-left-minus btn btn-danger btn-number" data-type="minus">
+                                    <svg width="16" height="16"><use xlink:href="#minus"></use>></svg>
+                                  </button>
+                              </span>
+                              <input type="text" id="quantity" name="quantity" class="form-control input-number" value="1">
+                              <span class="input-group-btn">
+                                  <button type="button" class="quantity-right-plus btn btn-success btn-number" data-type="plus">
+                                      <svg width="16" height="16"><use xlink:href="#plus"></use></svg>
+                                  </button>
+                              </span>
+                          </div>
+                          <a href="#" class="nav-link">Add to Cart <iconify-icon icon="uil:shopping-cart"></a>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="col">
+                      <div class="product-item">
+                        <a href="#" class="btn-wishlist"><svg width="24" height="24"><use xlink:href="#heart"></use></svg></a>
+                        <figure>
+                          <a href="index.html" title="Product Title">
+                            <img src="images/ram-1.webp"  class="tab-image">
+                          </a>
+                        </figure>
+                        <h3>Corsair Dominator Platinum RGB</h3>
+                        <span class="qty">1 Unit</span><span class="rating"><svg width="24" height="24" class="text-primary"><i class="fa-solid fa-star"></i></svg> 4.5</span>
+                        <span class="price">QAR 650.00</span>
+                        <div class="d-flex align-items-center justify-content-between">
+                          <div class="input-group product-qty">
+                              <span class="input-group-btn">
+                                  <button type="button" class="quantity-left-minus btn btn-danger btn-number" data-type="minus">
+                                    <svg width="16" height="16"><use xlink:href="#minus"></use>></svg>
+                                  </button>
+                              </span>
+                              <input type="text" id="quantity" name="quantity" class="form-control input-number" value="1">
+                              <span class="input-group-btn">
+                                  <button type="button" class="quantity-right-plus btn btn-success btn-number" data-type="plus">
+                                      <svg width="16" height="16"><use xlink:href="#plus"></use></svg>
+                                  </button>
+                              </span>
+                          </div>
+                          <a href="#" class="nav-link">Add to Cart <iconify-icon icon="uil:shopping-cart"></a>
+                        </div>
+                      </div>
+                    </div>
+                    </div>
+                    </div>
+
+                    <!--Mobile-products-grid-->
+
+                    <div class="tab-pane fade" id="Mobile" role="tabpanel" aria-labelledby="Mobile">
+
+                      <div class="product-grid row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-5">
+
+                    <div class="col">
+                      <div class="product-item">
+                        <a href="#" class="btn-wishlist"><svg width="24" height="24"><use xlink:href="#heart"></use></svg></a>
+                        <figure>
+                          <a href="index.html" title="Product Title">
+                            <img src="images/phone-1.webp"  class="tab-image">
+                          </a>
+                        </figure>
+                        <h3>RedMagic 7S Pro 18G+512G</h3>
+                        <span class="qty">1 unit</span><span class="rating"><svg width="24" height="24" class="text-primary"><i class="fa-solid fa-star"></i></svg> 4.5</span>
+                        <span class="price">QAR 2,500.00</span>
+                        <div class="d-flex align-items-center justify-content-between">
+                          <div class="input-group product-qty">
+                              <span class="input-group-btn">
+                                  <button type="button" class="quantity-left-minus btn btn-danger btn-number" data-type="minus">
+                                    <svg width="16" height="16"><use xlink:href="#minus"></use>></svg>
+                                  </button>
+                              </span>
+                              <input type="text" id="quantity" name="quantity" class="form-control input-number" value="1">
+                              <span class="input-group-btn">
+                                  <button type="button" class="quantity-right-plus btn btn-success btn-number" data-type="plus">
+                                      <svg width="16" height="16"><use xlink:href="#plus"></use></svg>
+                                  </button>
+                              </span>
+                          </div>
+                          <a href="#" class="nav-link">Add to Cart <iconify-icon icon="uil:shopping-cart"></a>
+                        </div>
+                      </div>
+                    </div>
+                    </div>
+                  </div>
+                  
+                   <!--Monitor-products-grid-->
+
+                   <div class="tab-pane fade" id="Monitor" role="tabpanel" aria-labelledby="Monitor">
+
+                    <div class="product-grid row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-5">
+
+                      <div class="col">
+                        <div class="product-item">
+                          <a href="#" class="btn-wishlist"><svg width="24" height="24"><use xlink:href="#heart"></use></svg></a>
+                          <figure>
+                            <a href="index.html" title="Product Title">
+                              <img src="images/monitor-1.webp"  class="tab-image">
+                            </a>
+                          </figure>
+                          <h3>LG UltraGear 34GS95QE-B 34"</h3>
+                          <span class="qty">1 Unit</span><span class="rating"><svg width="24" height="24" class="text-primary"><i class="fa-solid fa-star"></i></svg> 4.5</span>
+                          <span class="price">QAR 4,500.00</span>
+                          <div class="d-flex align-items-center justify-content-between">
+                            <div class="input-group product-qty">
+                                <span class="input-group-btn">
+                                    <button type="button" class="quantity-left-minus btn btn-danger btn-number" data-type="minus">
+                                      <svg width="16" height="16"><use xlink:href="#minus"></use>></svg>
+                                    </button>
+                                </span>
+                                <input type="text" id="quantity" name="quantity" class="form-control input-number" value="1">
+                                <span class="input-group-btn">
+                                    <button type="button" class="quantity-right-plus btn btn-success btn-number" data-type="plus">
+                                        <svg width="16" height="16"><use xlink:href="#plus"></use></svg>
+                                    </button>
+                                </span>
+                            </div>
+                            <a href="#" class="nav-link">Add to Cart <iconify-icon icon="uil:shopping-cart"></a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                      <!--REtro-products-grid-->
+
+                   <div class="tab-pane fade" id="Retro" role="tabpanel" aria-labelledby="Retro">
+
+                    <div class="product-grid row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-5">
+
+                      <div class="col">
+                        <div class="product-item">
+                          <a href="#" class="btn-wishlist"><svg width="24" height="24"><use xlink:href="#heart"></use></svg></a>
+                          <figure>
+                            <a href="index.html" title="Product Title">
+                              <img src="images/retro-games-1.webp"  class="tab-image">
+                            </a>
+                          </figure>
+                          <h3>(Pre-Owned) Grand Theft Auto V </h3>
+                          <span class="qty">1 Unit</span><span class="rating"><svg width="24" height="24" class="text-primary"><i class="fa-solid fa-star"></i></svg> 4.5</span>
+                          <span class="price">QAR 150.00</span>
+                          <div class="d-flex align-items-center justify-content-between">
+                            <div class="input-group product-qty">
+                                <span class="input-group-btn">
+                                    <button type="button" class="quantity-left-minus btn btn-danger btn-number" data-type="minus">
+                                      <svg width="16" height="16"><use xlink:href="#minus"></use>></svg>
+                                    </button>
+                                </span>
+                                <input type="text" id="quantity" name="quantity" class="form-control input-number" value="1">
+                                <span class="input-group-btn">
+                                    <button type="button" class="quantity-right-plus btn btn-success btn-number" data-type="plus">
+                                        <svg width="16" height="16"><use xlink:href="#plus"></use></svg>
+                                    </button>
+                                </span>
+                            </div>
+                            <a href="#" class="nav-link">Add to Cart <iconify-icon icon="uil:shopping-cart"></a>
+                          </div>
+                        </div>
+                      </div>
+                      </div>
+                      </div>
+
+
+
+                      <!--laptop-products-grid-->
+
+                   <div class="tab-pane fade" id="Laptop" role="tabpanel" aria-labelledby="Laptop">
+
+                    <div class="product-grid row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-5">
+
+                      <div class="col">
+                        <div class="product-item">
+                          <a href="#" class="btn-wishlist"><svg width="24" height="24"><use xlink:href="#heart"></use></svg></a>
+                          <figure>
+                            <a href="index.html" title="Product Title">
+                              <img src="images/laptop-1.webp"  class="tab-image">
+                            </a>
+                          </figure>
+                          <h3>Dell Alienware X14 Intel</h3>
+                          <span class="qty">1 Unit</span><span class="rating"><svg width="24" height="24" class="text-primary"><i class="fa-solid fa-star"></i></svg> 4.5</span>
+                          <span class="price">QAR 8,500.00</span>
+                          <div class="d-flex align-items-center justify-content-between">
+                            <div class="input-group product-qty">
+                                <span class="input-group-btn">
+                                    <button type="button" class="quantity-left-minus btn btn-danger btn-number" data-type="minus">
+                                      <svg width="16" height="16"><use xlink:href="#minus"></use>></svg>
+                                    </button>
+                                </span>
+                                <input type="text" id="quantity" name="quantity" class="form-control input-number" value="1">
+                                <span class="input-group-btn">
+                                    <button type="button" class="quantity-right-plus btn btn-success btn-number" data-type="plus">
+                                        <svg width="16" height="16"><use xlink:href="#plus"></use></svg>
+                                    </button>
+                                </span>
+                            </div>
+                            <a href="#" class="nav-link">Add to Cart <iconify-icon icon="uil:shopping-cart"></a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                    <!--Pre-owned-pc-->
+                  <div class="tab-pane fade" id="Pre-Owned-Pc" role="tabpanel" aria-labelledby="Pre-Owned-Pc">
+  
+                    <div class="product-grid row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-5">
+                    
+                      <div class="col">
+                        <div class="product-item">
+                          <span class="badge bg-success position-absolute m-3">-30%</span>
+                          <a href="#" class="btn-wishlist"><svg width="24" height="24"><use xlink:href="#heart"></use></svg></a>
+                          <figure>
+                            <a href="index.html" title="Product Title">
+                              <img src="images/pre-owned-1.jpg"  class="tab-image">
+                            </a>
+                          </figure>
+                          <h3>(Pre-Owned) Gaming PC Intel...</h3>
+                          <span class="qty">1 Unit</span><span class="rating"><svg width="24" height="24" class="text-primary"><i class="fa-solid fa-star"></i></svg> 4.5</span>
+                          <span class="price">QAR 3,890.00</span>
+                          <div class="d-flex align-items-center justify-content-between">
+                            <div class="input-group product-qty">
+                                <span class="input-group-btn">
+                                    <button type="button" class="quantity-left-minus btn btn-danger btn-number" data-type="minus">
+                                      <svg width="16" height="16"><use xlink:href="#minus"></use>></svg>
+                                    </button>
+                                </span>
+                                <input type="text" id="quantity" name="quantity" class="form-control input-number" value="1">
+                                <span class="input-group-btn">
+                                    <button type="button" class="quantity-right-plus btn btn-success btn-number" data-type="plus">
+                                        <svg width="16" height="16"><use xlink:href="#plus"></use></svg>
+                                    </button>
+                                </span>
+                            </div>
+                            <a href="#" class="nav-link">Add to Cart <iconify-icon icon="uil:shopping-cart"></a>
+                          </div>
+                        </div>
+                      </div>
+  
+                      <div class="col">
+                        <div class="product-item">
+                          <span class="badge bg-success position-absolute m-3">-30%</span>
+                          <a href="#" class="btn-wishlist"><svg width="24" height="24"><use xlink:href="#heart"></use></svg></a>
+                          <figure>
+                            <a href="index.html" title="Product Title">
+                              <img src="images/pre-owned-3.jpg"  class="tab-image">
+                            </a>
+                          </figure>
+                          <h3>(Pre-Owned) Gaming PC Intel Core i9.....</h3>
+                          <span class="qty">1 Unit</span><span class="rating"><svg width="24" height="24" class="text-primary"><i class="fa-solid fa-star"></i></svg> 4.5</span>
+                          <span class="price">QAR 7,000.00</span>
+                          <div class="d-flex align-items-center justify-content-between">
+                            <div class="input-group product-qty">
+                                <span class="input-group-btn">
+                                    <button type="button" class="quantity-left-minus btn btn-danger btn-number" data-type="minus">
+                                      <svg width="16" height="16"><use xlink:href="#minus"></use>></svg>
+                                    </button>
+                                </span>
+                                <input type="text" id="quantity" name="quantity" class="form-control input-number" value="1">
+                                <span class="input-group-btn">
+                                    <button type="button" class="quantity-right-plus btn btn-success btn-number" data-type="plus">
+                                        <svg width="16" height="16"><use xlink:href="#plus"></use></svg>
+                                    </button>
+                                </span>
+                            </div>
+                            <a href="#" class="nav-link">Add to Cart <iconify-icon icon="uil:shopping-cart"></a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!--Pre-build-pc-->
+                  <div class="tab-pane fade" id="Pre-Build" role="tabpanel" aria-labelledby="Pre-Build">
+  
+                    <div class="product-grid row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-5">
+                      
+                      <div class="col">
+                        <div class="product-item">
+                          <a href="#" class="btn-wishlist"><svg width="24" height="24"><use xlink:href="#heart"></use></svg></a>
+                          <figure>
+                            <a href="index.html" title="Product Title">
+                              <img src="images/custom-build-1.webp"  class="tab-image">
+                            </a>
+                          </figure>
+                          <h3>(Custom-Build) Alien Build....</h3>
+                          <span class="qty">1 Unit</span><span class="rating"><svg width="24" height="24" class="text-primary"><i class="fa-solid fa-star"></i></svg> 4.5</span>
+                          <span class="price">QAR 17,000.00</span>
+                          <div class="d-flex align-items-center justify-content-between">
+                            <div class="input-group product-qty">
+                                <span class="input-group-btn">
+                                    <button type="button" class="quantity-left-minus btn btn-danger btn-number" data-type="minus">
+                                      <svg width="16" height="16"><use xlink:href="#minus"></use>></svg>
+                                    </button>
+                                </span>
+                                <input type="text" id="quantity" name="quantity" class="form-control input-number" value="1">
+                                <span class="input-group-btn">
+                                    <button type="button" class="quantity-right-plus btn btn-success btn-number" data-type="plus">
+                                        <svg width="16" height="16"><use xlink:href="#plus"></use></svg>
+                                    </button>
+                                </span>
+                            </div>
+                            <a href="#" class="nav-link">Add to Cart <iconify-icon icon="uil:shopping-cart"></a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    </div>
+
+                    <!--Console-grid-->
+
+                   <div class="tab-pane fade" id="console-acces" role="tabpanel" aria-labelledby="console-acces">
+
+                    <div class="product-grid row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-5">
+
+                      <<div class="col">
+                        <div class="product-item">
+                          <a href="#" class="btn-wishlist"><svg width="24" height="24"><use xlink:href="#heart"></use></svg></a>
+                          <figure>
+                            <a href="index.html" title="Product Title">
+                              <img src="images/chair-1.webp"  class="tab-image">
+                            </a>
+                          </figure>
+                          <h3>Epic Gamers V2 RGB Gaming Chair</h3>
+                          <span class="qty">1 Unit</span><span class="rating"><svg width="24" height="24" class="text-primary"><i class="fa-solid fa-star"></i></svg> 4.5</span>
+                          <span class="price">QAR 1,500.00</span>
+                          <div class="d-flex align-items-center justify-content-between">
+                            <div class="input-group product-qty">
+                                <span class="input-group-btn">
+                                    <button type="button" class="quantity-left-minus btn btn-danger btn-number" data-type="minus">
+                                      <svg width="16" height="16"><use xlink:href="#minus"></use>></svg>
+                                    </button>
+                                </span>
+                                <input type="text" id="quantity" name="quantity" class="form-control input-number" value="1">
+                                <span class="input-group-btn">
+                                    <button type="button" class="quantity-right-plus btn btn-success btn-number" data-type="plus">
+                                        <svg width="16" height="16"><use xlink:href="#plus"></use></svg>
+                                    </button>
+                                </span>
+                            </div>
+                            <a href="#" class="nav-link">Add to Cart <iconify-icon icon="uil:shopping-cart"></a>
+                          </div>
+                        </div>
+                      </div>
+                      
+                      <div class="col">
+                        <div class="product-item">
+                          <a href="#" class="btn-wishlist"><svg width="24" height="24"><use xlink:href="#heart"></use></svg></a>
+                          <figure>
+                            <a href="index.html" title="Product Title">
+                              <img src="images/steamdeck-1.webp"  class="tab-image">
+                            </a>
+                          </figure>
+                          <h3>Valve Steam Deck 16GB RAM 512GB</h3>
+                          <span class="qty">1 Unit</span><span class="rating"><svg width="24" height="24" class="text-primary"><i class="fa-solid fa-star"></i></svg> 4.5</span>
+                          <span class="price">QAR 2,500.00</span>
+                          <div class="d-flex align-items-center justify-content-between">
+                            <div class="input-group product-qty">
+                                <span class="input-group-btn">
+                                    <button type="button" class="quantity-left-minus btn btn-danger btn-number" data-type="minus">
+                                      <svg width="16" height="16"><use xlink:href="#minus"></use>></svg>
+                                    </button>
+                                </span>
+                                <input type="text" id="quantity" name="quantity" class="form-control input-number" value="1">
+                                <span class="input-group-btn">
+                                    <button type="button" class="quantity-right-plus btn btn-success btn-number" data-type="plus">
+                                        <svg width="16" height="16"><use xlink:href="#plus"></use></svg>
+                                    </button>
+                                </span>
+                            </div>
+                            <a href="#" class="nav-link">Add to Cart <iconify-icon icon="uil:shopping-cart"></a>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col">
+                        <div class="product-item">
+                          <a href="#" class="btn-wishlist"><svg width="24" height="24"><use xlink:href="#heart"></use></svg></a>
+                          <figure>
+                            <a href="index.html" title="Product Title">
+                              <img src="images/handheld-gaming-1.webp"  class="tab-image">
+                            </a>
+                          </figure>
+                          <h3>Lenovo Legion GO Z1 Handheld </h3>
+                          <span class="qty">Sold out</span><span class="rating"><svg width="24" height="24" class="text-primary"><i class="fa-solid fa-star"></i></svg> 4.5</span>
+                          <span class="price">QAR 1,500.00</span>
+                          <div class="d-flex align-items-center justify-content-between">
+                            <div class="input-group product-qty">
+                                <span class="input-group-btn">
+                                    <button type="button" class="quantity-left-minus btn btn-danger btn-number" data-type="minus">
+                                      <svg width="16" height="16"><use xlink:href="#minus"></use>></svg>
+                                    </button>
+                                </span>
+                                <input type="text" id="quantity" name="quantity" class="form-control input-number" value="1">
+                                <span class="input-group-btn">
+                                    <button type="button" class="quantity-right-plus btn btn-success btn-number" data-type="plus">
+                                        <svg width="16" height="16"><use xlink:href="#plus"></use></svg>
+                                    </button>
+                                </span>
+                            </div>
+                            <a href="#" class="nav-link">Add to Cart <iconify-icon icon="uil:shopping-cart"></a>
+                          </div>
+                        </div>
+                      </div>
+                      </div>
+                      </div>
+
+
+
+
+
+
+                  </div>
+</section>
+
+<section id="service">
+<div class="container-xxl py-5">
+    <div class="container">
+        <div class="row g-4">
+            <div class="col-lg-3 col-sm-6">
+                <div class="service-item rounded pt-3">
+                    <div class="p-4">
+                        <i class="fa fa-3x fa-laptop text-primary mb-4" aria-hidden="true" ></i>
+                        <h5>Cleaning & cable mangement </h5>
+                        <p> We offer PC/Laptop Cleaning and fixing wire disaster to make your pc look amazing at the very affordable price.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-sm-6">
+                <div class="service-item rounded pt-3">
+                    <div class="p-4">
+                        <i class="fa fa-3x fa-mobile text-primary mb-4"></i>
+                        <h5>Quality Products</h5>
+                        <p>We hold true to our products the we offer to our dear customer to be second to none </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-sm-6">
+                <div class="service-item rounded pt-3">
+                    <div class="p-4">
+                        <i class="fa fa-3x fa-cart-plus text-primary mb-4"></i>
+                        <h5>Online Order</h5>
+                        <p>fast and reliable order from our trusted website to get bonuses and disccounts.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-sm-6">
+                <div class="service-item rounded pt-3">
+                    <div class="p-4">
+                        <i class="fa fa-3x fa-headset text-primary mb-4"></i>
+                        <h5>24/7 Service</h5>
+                        <p>Always open to assist our valuable customer to any inquiries</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</section>
+
+<section id="contact">
+    <div class="container-xxl py-5">
+        <div class="container">
+            <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+                <h5 class="section-title ff-secondary text-center text-primary fw-normal">Contact Us</h5>
+                <h1 class="mb-5">Contact For Any Query</h1>
+            </div>
+            <div class="row g-4">
+                <div class="col-12">
+                    <div class="row gy-4">
+                        <div class="col-md-4">
+                            <h5 class="section-title ff-secondary fw-normal text-start text-primary">Booking Pc Consultant</h5>
+                            <p><i class="fa fa-envelope-open text-primary me-2"></i>SnoWell@gmail.com</p>
+                        </div>
+                        <div class="col-md-4">
+                            <h5 class="section-title ff-secondary fw-normal text-start text-primary">General</h5>
+                            <p><i class="fa fa-envelope-open text-primary me-2"></i>SnoWell@gmail.com</p>
+                        </div>
+                        <div class="col-md-4">
+                            <h5 class="section-title ff-secondary fw-normal text-start text-primary">Inquries on any Products </h5>
+                            <p><i class="fa fa-envelope-open text-primary me-2"></i>SnoWell@gmail.com</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 wow fadeIn" data-wow-delay="0.1s">
+                    <div class="img-contact">
+                    <iframe class="position-relative rounded w-100 h-100"
+                         
+                        frameborder="0" style="min-height: 350px; border:0; background-image: url(images/pc.jpg);background-size: cover;background-repeat: no-repeat;" allowfullscreen="" aria-hidden="false"
+                        tabindex="0"></iframe></div>
+                </div>
+                <div class="col-md-6">
+                    <div class="wow fadeInUp" data-wow-delay="0.2s">
+                        <form>
+                            <div class="row g-3">
+                                <div class="col-md-6">
+                                    <div class="form-floating">
+                                        <input type="text" class="form-control" id="name" placeholder="Your Name">
+                                        <label for="name">Your Name</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-floating">
+                                        <input type="email" class="form-control" id="email" placeholder="Your Email">
+                                        <label for="email">Your Email</label>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="form-floating">
+                                        <input type="text" class="form-control" id="subject" placeholder="Subject">
+                                        <label for="subject">Subject</label>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="form-floating">
+                                        <textarea class="form-control" placeholder="Leave a message here" id="message" style="height: 150px"></textarea>
+                                        <label for="message">Message</label>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <button class="btn btn-primary w-100 py-3" type="submit">Send Message</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <div class="bottom-ticker">
+        <div class="ticker-content" id="tickerText">
+            <!-- Dynamic content will be inserted here -->
+        </div>
+    </div>
+ 
+    <footer>
+        <div class="footer-content">
+                    <p>&copy; <span id="currentYear"></span> Your AJs Snowell. All Rights Reserved.</p>
+                    <ul class="footer-content-ul">
+                        <li class=".footer-content-ul-li"><a href="#about">About Us</a></li>
+                        <li class=".footer-content-ul-li"><a class=" .footer-content-a" href="#services">Services</a></li>
+                        <li class=".footer-content-ul-li"><a class=" .footer-content-a" href="#contact">Contact</a></li>
+                        <li class=".footer-content-ul-li"><a class=" .footer-content-a"href="#privacy">Privacy Policy</a></li>
+                    </ul>
+                    <p>Follow us on:
+                        <a href="https://facebook.com" target="_blank">Facebook</a> |
+                        <a href="https://twitter.com" target="_blank">Twitter</a> |
+                        <a href="https://instagram.com" target="_blank">Instagram</a>
+                    </p>
+                </div>
+            </footer>
+            </body>
+
+            <script>
+                function updateTicker() {
+                    const tickerText = document.getElementById('tickerText');
+                    const now = new Date();
+                    const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric', hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: true };
+                    const dateTimeString = now.toLocaleDateString('en-US', options);
+                    
+                    tickerText.textContent = `Current Date & Time: ${dateTimeString} | Additional Text Here`;
+                }
+                
+                // Update the ticker every second
+                setInterval(updateTicker, 1000);
+                
+                // Initial call to set the ticker text immediately
+                updateTicker();
+                
+                
+                </script>
+                <script>
+                    const productContainers = [...document.querySelectorAll('.product-container')];
+                    const nxtBtn = [...document.querySelectorAll('.nxt-btn')];
+                    const preBtn = [...document.querySelectorAll('.pre-btn')];
+                    
+                    productContainers.forEach((item, i) => {
+                        let containerDimensions = item.getBoundingClientRect();
+                        let containerWidth = containerDimensions.width;
+                    
+                        nxtBtn[i].addEventListener('click', () => {
+                            item.scrollLeft += containerWidth;
+                        })
+                    
+                        preBtn[i].addEventListener('click', () => {
+                            item.scrollLeft -= containerWidth;
+                        })
+                    })</script>
+
+
+                    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+                    
